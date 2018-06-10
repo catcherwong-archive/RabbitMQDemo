@@ -38,7 +38,7 @@ namespace Lib
 
             if (!string.IsNullOrEmpty(_options.ExchangeName))
             {
-                channel.ExchangeDeclare(_options.ExchangeName, _options.ExchangeType, false, false, null);
+                channel.ExchangeDeclare(_options.ExchangeName, _options.ExchangeType, true, false, null);
                 //将队列绑定到交换机
                 channel.QueueBind(queueName, _options.ExchangeName, routeKey, null);
             }
@@ -81,7 +81,7 @@ namespace Lib
 
             if (!string.IsNullOrEmpty(_options.ExchangeName))
             {
-                channel.ExchangeDeclare(_options.ExchangeName, _options.ExchangeType, false, false, null);
+                channel.ExchangeDeclare(_options.ExchangeName, _options.ExchangeType, true, false, null);
                 //将队列绑定到交换机
                 channel.QueueBind(queueName, _options.ExchangeName, routeKey, null);
             }
